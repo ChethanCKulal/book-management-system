@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Book Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Online Book Management System</h1>
+
+    <!-- Status / Error Message Banner -->
+    <div id="status-message" class="status-hidden"></div>
+
+    <!-- Add / Update Book Form -->
+    <div class="card">
+      <h2 id="form-title">Add New Book</h2>
+      <form id="book-form">
+        <input type="hidden" id="book-id" />
+        <div class="form-group">
+          <label for="title">Book Title</label>
+          <input type="text" id="title" placeholder="Enter book title" required />
+        </div>
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input type="text" id="author" placeholder="Enter author name" required />
+        </div>
+        <div class="form-group">
+          <label for="price">Price (₹)</label>
+          <input type="number" id="price" step="0.01" placeholder="Enter price" required />
+        </div>
+        <div class="button-group">
+          <button type="submit" id="submit-btn">Add Book</button>
+          <button type="button" id="cancel-btn" class="hidden">Cancel Edit</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Search Book by ID -->
+    <div class="card">
+      <h2>Find Book by ID</h2>
+      <div class="search-group">
+        <input type="number" id="search-id" placeholder="Enter Book ID (e.g., 1)" />
+        <button type="button" id="search-btn">Search</button>
+        <button type="button" id="reset-search-btn" class="secondary">Show All</button>
+      </div>
+    </div>
+
+    <!-- Book List Table -->
+    <div class="card">
+      <h2>Book Inventory</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price (₹)</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="book-list">
+          <!-- Books will be dynamically inserted here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
